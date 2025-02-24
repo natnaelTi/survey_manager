@@ -25,8 +25,11 @@ app_license = "mit"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/survey_manager/css/survey_manager.css"
-# app_include_js = "/assets/survey_manager/js/survey_manager.js"
+# app_include_css = "/public/css/survey.css"
+# app_include_js = [
+#     "/public/js/survey.core.min.js",
+#     "/public/js/survey-creator-core.min.js"
+# ]
 
 # include js, css files in header of web template
 # web_include_css = "/assets/survey_manager/css/survey_manager.css"
@@ -63,6 +66,10 @@ app_license = "mit"
 # role_home_page = {
 # 	"Role": "home_page"
 # }
+
+# website_route_rules = [
+#     {"from_route": "/survey-builder", "to_route": "survey_builder"}
+# ]
 
 # Generators
 # ----------
@@ -138,11 +145,11 @@ app_license = "mit"
 # Hook on document methods and events
 
 # doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
+#     "Survey": {
+#         "after_insert": "survey_manager.survey_manager.api.survey.after_survey_created",
+#         "on_update": "survey_manager.survey_manager.api.survey.after_survey_updated",
+#         "on_trash": "survey_manager.survey_manager.api.survey.before_survey_deleted"
+#     }
 # }
 
 # Scheduled Tasks
@@ -193,6 +200,16 @@ app_license = "mit"
 # -----------------------------------------------------------
 
 # ignore_links_on_delete = ["Communication", "ToDo"]
+
+# Fixtures
+# --------
+
+fixtures = [
+    {
+        "dt": "Custom Field",
+        "filters": [["dt", "in", ["Survey", "Survey Response"]]]
+    }
+]
 
 # Request Events
 # ----------------

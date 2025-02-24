@@ -1,0 +1,86 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-02-16 12:06:46.777598",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "survey_information_section",
+  "naming_series",
+  "survey",
+  "survey_json",
+  "survey_response_section",
+  "response_json"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Naming Series",
+   "options": "SUR-RES-#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "survey",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Survey",
+   "options": "Survey",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "survey.survey_json",
+   "fetch_if_empty": 1,
+   "fieldname": "survey_json",
+   "fieldtype": "JSON",
+   "in_list_view": 1,
+   "label": "Survey JSON",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "response_json",
+   "fieldtype": "JSON",
+   "in_list_view": 1,
+   "label": "Response JSON",
+   "reqd": 1
+  },
+  {
+   "fieldname": "survey_information_section",
+   "fieldtype": "Section Break",
+   "label": "Survey Information"
+  },
+  {
+   "fieldname": "survey_response_section",
+   "fieldtype": "Section Break",
+   "label": "Survey Response"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-16 12:17:35.123363",
+ "modified_by": "Administrator",
+ "module": "Survey Manager",
+ "name": "Survey Response",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
