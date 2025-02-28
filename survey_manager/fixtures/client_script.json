@@ -1,0 +1,13 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Survey",
+  "enabled": 1,
+  "modified": "2025-02-28 12:19:55.437250",
+  "module": "Survey Manager",
+  "name": "Survey Builder Link",
+  "script": "frappe.ui.form.on('Survey', {\r\n    refresh: function(frm) {\r\n        frm.add_custom_button(__('Open Survey Builder'), function() {\r\n            window.location.href = `/survey-builder/${frm.doc.name}`;\r\n        });\r\n    }\r\n});\r\n",
+  "view": "Form"
+ }
+]

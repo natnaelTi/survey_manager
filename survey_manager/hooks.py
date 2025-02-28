@@ -208,7 +208,23 @@ fixtures = [
     {
         "dt": "Custom Field",
         "filters": [["dt", "in", ["Survey", "Survey Response"]]]
-    }
+    },
+    {
+        "dt": "Client Script",
+        "filters": [["module", "in", ["Survey Manager"]]]
+    },
+    {
+        "dt": "Server Script",
+        "filters": [["module", "in", ["Survey Manager"]]]
+    },
+    {
+        "dt": "Custom Field",
+        "filters": [["module", "in", ["Survey Manager"]]]
+    },
+    {
+        "dt": "Property Setter",
+        "filters": [["module", "in", ["Survey Manager"]]]
+    },
 ]
 
 # Request Events
