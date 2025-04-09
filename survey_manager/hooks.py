@@ -210,6 +210,10 @@ fixtures = [
         "filters": [["dt", "in", ["Survey", "Survey Response"]]]
     },
     {
+        "dt": "Web Page",
+        "filters": [["module", "in", ["Survey Manager"]]]
+    },
+    {
         "dt": "Client Script",
         "filters": [["module", "in", ["Survey Manager"]]]
     },

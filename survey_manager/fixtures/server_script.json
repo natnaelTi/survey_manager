@@ -1,1 +1,21 @@
-[]
+[
+ {
+  "allow_guest": 0,
+  "api_method": null,
+  "cron_format": null,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Server Script",
+  "doctype_event": "After Save",
+  "enable_rate_limit": 0,
+  "event_frequency": "All",
+  "modified": "2025-03-02 12:05:10.568678",
+  "module": "Survey Manager",
+  "name": "Set Survey Public Link",
+  "rate_limit_count": 5,
+  "rate_limit_seconds": 86400,
+  "reference_doctype": "Survey",
+  "script": "# Fetch the base URL dynamically\nbase_url = frappe.utils.get_url()\n\n# Define the survey URL path\nsurvey_path = \"/survey-response/\"\n\n# Check if the public link is already set\nif not doc.public_link:\n    # Generate the link dynamically\n    doc.public_link = f\"{base_url}{survey_path}{doc.name}\"\n    doc.save()",
+  "script_type": "DocType Event"
+ }
+]

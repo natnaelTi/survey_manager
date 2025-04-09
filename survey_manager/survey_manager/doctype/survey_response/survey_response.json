@@ -1,27 +1,18 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "naming_series:",
+ "autoname": "format:SUR.RES{YYYY}.{#####}",
  "creation": "2025-02-16 12:06:46.777598",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "survey_information_section",
-  "naming_series",
   "survey",
   "survey_json",
   "survey_response_section",
   "response_json"
  ],
  "fields": [
-  {
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Naming Series",
-   "options": "SUR-RES-#####",
-   "reqd": 1
-  },
   {
    "fieldname": "survey",
    "fieldtype": "Link",
@@ -35,10 +26,10 @@
    "fetch_if_empty": 1,
    "fieldname": "survey_json",
    "fieldtype": "JSON",
+   "hidden": 1,
    "in_list_view": 1,
    "label": "Survey JSON",
-   "read_only": 1,
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fieldname": "response_json",
@@ -60,11 +51,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-16 12:17:35.123363",
+ "modified": "2025-03-02 19:54:14.667539",
  "modified_by": "Administrator",
  "module": "Survey Manager",
  "name": "Survey Response",
- "naming_rule": "By \"Naming Series\" field",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

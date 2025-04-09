@@ -1,13 +1,16 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "naming_series:",
+ "autoname": "format:SUR{YYYY}.{#####}",
  "creation": "2024-02-20 10:00:00",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "naming_series",
   "title",
+  "column_break_kkdm",
+  "closing_date_and_time",
+  "public_link",
+  "section_break_gfhw",
   "survey_json"
  ],
  "fields": [
@@ -21,21 +24,37 @@
   {
    "fieldname": "survey_json",
    "fieldtype": "JSON",
+   "hidden": 1,
    "label": "Survey JSON"
   },
   {
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "label": "Naming Series",
-   "options": "SUR-{YYYY}.#####"
+   "fieldname": "column_break_kkdm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "closing_date_and_time",
+   "fieldtype": "Datetime",
+   "label": "Closing Date and Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_gfhw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "public_link",
+   "fieldtype": "Data",
+   "label": "Public Link",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-16 12:18:36.217176",
+ "modified": "2025-03-02 12:45:25.707254",
  "modified_by": "Administrator",
  "module": "Survey Manager",
  "name": "Survey",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
